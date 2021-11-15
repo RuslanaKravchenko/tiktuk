@@ -1,16 +1,14 @@
 import React from 'react';
-import { getStrapiMedia } from '../../utils/media';
 import PropTypes from 'prop-types';
 import { mediaPropTypes } from '../../utils/types';
 import NextImage from 'next/image';
 
 const Image = ({ media, className }) => {
   const { url, alternativeText, width, height } = media;
-  const fullUrl = getStrapiMedia(url);
 
   return (
     <NextImage
-      src={fullUrl}
+      src={url}
       alt={alternativeText || ''}
       className={className}
       width={width}

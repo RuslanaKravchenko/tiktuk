@@ -2,7 +2,23 @@ import React from 'react';
 import CustomLink from './CustomLink';
 import Image from './Image';
 
-const IconLink = ({ data: { url, image, newTab } }) => {
+interface IImage {
+  [key: string]: any;
+}
+
+interface IData {
+  url: string;
+  image: IImage;
+  newTab: boolean;
+}
+
+type TIconLinkProps = {
+  data: IData;
+};
+
+const IconLink: React.FC<TIconLinkProps> = ({
+  data: { url, image, newTab },
+}) => {
   return (
     <CustomLink
       link={{

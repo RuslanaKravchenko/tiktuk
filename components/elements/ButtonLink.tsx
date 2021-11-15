@@ -3,14 +3,25 @@ import classNames from 'classnames';
 
 import CustomLink from './CustomLink';
 
-const ButtonLink = ({
+type TButtonLinkProps = {
+  text: string;
+  url: string;
+  newTab: boolean;
+  download?: boolean;
+  size?: string;
+  type?: string;
+  icon?: React.ReactNode;
+  animation: boolean;
+};
+
+const ButtonLink: React.FC<TButtonLinkProps> = ({
   text,
   size = 'normal',
   type = 'primary',
   url,
   newTab,
   download = false,
-  icon = null,
+  icon,
   animation = false,
 }) => {
   const classes = classNames({

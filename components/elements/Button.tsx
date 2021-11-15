@@ -1,11 +1,22 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const Button = ({
+type TButtonProps = {
+  text: string;
+  onClick(): void;
+  size?: string;
+  type?: string;
+  className?: string;
+  htmlType?: 'button' | 'submit' | 'reset' | undefined;
+  disabled?: boolean;
+  icon?: React.ReactNode;
+};
+
+const Button: React.FC<TButtonProps> = ({
   text,
-  icon = null,
-  onClick = null,
-  className = null,
+  icon,
+  onClick,
+  className = '',
   size = 'normal',
   type = 'primary',
   htmlType = 'button',
