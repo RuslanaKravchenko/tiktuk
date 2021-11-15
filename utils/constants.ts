@@ -1,4 +1,8 @@
-export const ICONS = {
+interface IIcons {
+  [key: string]: string;
+}
+
+export const ICONS: IIcons = {
   ARROW_DOWN: 'ARROW_DOWN',
   BURGER: 'BURGER',
   CLOSE: 'CLOSE',
@@ -10,6 +14,5 @@ export const ICONS = {
   GOOGLE: 'GOOGLE',
   USER: 'USER',
   EMAIL: 'EMAIL',
-  ARROW_DOWN: 'ARROW_DOWN',
   ARROW_UP: 'ARROW_UP',
 };
