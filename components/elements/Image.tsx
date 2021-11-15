@@ -1,9 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { mediaPropTypes } from '../../utils/types';
 import NextImage from 'next/image';
 
-const Image = ({ media, className }) => {
+interface IMedia {
+  url: string;
+  alternativeText: string;
+  width: number;
+  height: number;
+}
+
+type TImageProps = {
+  media: IMedia;
+  className: string;
+};
+
+const Image: React.FC<TImageProps> = ({ media, className }) => {
   const { url, alternativeText, width, height } = media;
 
   return (
@@ -13,16 +23,10 @@ const Image = ({ media, className }) => {
       className={className}
       width={width}
       height={height}
-      objectFit={true}
       placeholder='blur'
-      blurDataURL={fullUrl}
+      blurDataURL={url}
     />
   );
-};
-
-Image.propTypes = {
-  media: mediaPropTypes.isRequired,
-  className: PropTypes.string,
 };
 
 export default Image;
